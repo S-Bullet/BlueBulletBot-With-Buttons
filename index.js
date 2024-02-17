@@ -1,4 +1,5 @@
 //Discord Client
+require('dotenv').config();
 const { Client, Intents, MessageActionRow, MessageButton } = require('discord.js')
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
 
@@ -227,4 +228,4 @@ client.on("messageCreate", async (msg) => {
 //For Support Join Support Server https://discord.gg/sAMznQK2NG
 //For Feature Request Open a Pull Request
 
-client.login(config.token).catch(() => console.log('Invalid Token.Make Sure To Fill config.json'))
+client.login(process.env.TOKEN).catch(() => console.log('Invalid Token.Make Sure To Fill config.json'))
